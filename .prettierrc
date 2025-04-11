@@ -1,0 +1,20 @@
+{
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "useTabs": false,
+    "endOfLine": "lf",
+    "printWidth": 80,
+    "arrowParens": "avoid",
+    "proseWrap": "always",
+    "htmlWhitespaceSensitivity": "strict",
+    "bracketSpacing": true,
+    "quoteProps": "as-needed",
+    "trailingComma": "none",
+    "react/jsx-sort-props": "true",
+    "react/jsx-curly-newline": "always",
+    "react/jsx-max-props-per-line": 1,
+    "jsxBracketSameLine": false,
+    "react/jsx-equals-spacing": true,
+    "react/jsx-no-duplicate-props": true
+}

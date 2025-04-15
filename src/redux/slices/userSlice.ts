@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { GITHUB_API, HEADERS, searchQuery, userQuery } from '@common'
+import { GITHUB_API, searchQuery, userQuery } from '@common'
 import { User, UserDetails, UserState } from '@common'
 
 const initialState: UserState = {
@@ -17,9 +17,7 @@ const initialState: UserState = {
 export const fetchUsers = createAsyncThunk(
     'fetchUsers',
     async (value: string) => {
-        const response = await fetch(GITHUB_API + searchQuery(value), {
-            headers: HEADERS
-        })
+        const response = await fetch(GITHUB_API + searchQuery(value))
         const data = await response.json()
         return data.items as User[]
     }
@@ -34,9 +32,7 @@ export const fetchUsers = createAsyncThunk(
 export const fetchUserDetails = createAsyncThunk(
     'fetchUserDetails',
     async (username: string) => {
-        const response = await fetch(GITHUB_API + userQuery(username), {
-            headers: HEADERS
-        })
+        const response = await fetch(GITHUB_API + userQuery(username))
         const data = await response.json()
         return data as UserDetails
     }

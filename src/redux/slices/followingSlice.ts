@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import {
     GITHUB_API,
-    HEADERS,
     followingQuery,
     FollowingState,
     User
@@ -21,9 +20,7 @@ const initialState: FollowingState = {
 export const fetchFollowing = createAsyncThunk(
     'fetchFollowing',
     async (username: string) => {
-        const response = await fetch(GITHUB_API + followingQuery(username), {
-            headers: HEADERS
-        })
+        const response = await fetch(GITHUB_API + followingQuery(username))
         const data = await response.json()
         return data as User[]
     }
